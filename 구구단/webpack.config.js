@@ -2,8 +2,8 @@ const path = require('path');
 const webpack = require('webpack');
 
 module.exports = {
-    mode: 'development',
-    devtool: 'eval', // hidden-source-map(운영시에 개발시엔 eval)
+    mode: 'development', // 실서비스: production
+    devtool: 'eval', // 실서비스: hidden-source-map
     resolve: {
         extensions: ['.js', '.jsx']
     },

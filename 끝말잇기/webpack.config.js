@@ -1,9 +1,9 @@
 const path = require('path');
 
 module.exports = {
-    name: 'wordRelay-setting',
+    name: 'wordrelay-setting',
     mode: 'development', // 실서비스: production
-    devtool: 'eval',
+    devtool: 'eval', // 실서비스: hidden-source-map
     resolve: {
         extensions: ['.js', '.jsx']
     },
@@ -18,7 +18,15 @@ module.exports = {
             test: /\.jsx?/,
             loader: 'babel-loader',
             options: {
-                presets: ['@babel/preset-env', '@babel/preset-react'],
+                presets: [
+                    ['@babel/preset-env', {
+                        targets: {
+                            browsers: ['> 5% in KR', 'last 2 chrome versions'], // browserslist
+                        },
+                        debug: true,
+                    }],
+                    '@babel/preset-react',
+                    ],
                 plugins: ['@babel/plugin-proposal-class-properties'],
             },
         }],
