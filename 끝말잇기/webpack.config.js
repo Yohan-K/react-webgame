@@ -2,7 +2,7 @@ const path = require('path');
 const RefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin')
 
 module.exports = {
-    name: 'wordrelay-setting',
+    name: 'wordrelay',
     mode: 'development', // 실서비스: production
     devtool: 'eval', // 실서비스: hidden-source-map
     resolve: {
@@ -48,5 +48,5 @@ module.exports = {
     devServer: {
         publicPath: '/dist/',
         hot: true,
-    }
+    },
 };
